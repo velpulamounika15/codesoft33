@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+  }
+  
+  body {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Header */
+  header {
+    background-color: orangered;
+    color: rgb(231, 207, 207);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+  .navbar a:hover{
+    background-color:cyan;
+    border: 1px solid black;
+  }
+  
+  header a,
+  .navbar a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .fa-bars {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .navbar ul li {
+    text-align: center;
+  }
+  
+  /* About Section */
+  .about-me {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+  
+  .img img{
+    border: 5px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 100px;
+    border: 3px solid orangered;
+  }
+  
+  .info h1 {
+    color: orangered;
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  
+  .info p {
+    color: white;
+    font-size: 26px;
+  }
+  
+  .info button {
+    background-color: orangered;
+    height: 30px;
+    width: 200px;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  /* Home Section */
+  .home-content {
+    margin: 70px;
+    color: white;
+  }
+  
+  .home-content h1 {
+    color: orangered;
+    font-size: 32px;
+    
+  }
+  
+  .home-content h3 {
+    font-size: 30px;
+  }
+  
+  .home-content h3 span {
+    color: orangered;
+    font-size: 30px;
+  }
+  
+  .home-content p {
+    font-size: 28px;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+  }
+  
+  .social-icons i {
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .social-icons i:hover {
+    border-radius: 50%;
+    background-color: orangered;
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .home-img img {
+    border-radius: 50%;
+    height: 250px;
+    width: 220px;
+    margin: 100px;
+    border: 4px solid orangered;
+  }
+  
+  .anchor {
+    background-color: orangered;
+    height: 30px;
+    width: 200px;
+    color: black;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  /* Skills Section */
+  .container {
+    width: 80%;
+    margin: 50px auto;
+  }
+  
+  .container h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .skills {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .progress {
+    height: 10px;
+    background-color: orangered;
+    border-radius: 5px;
+  }
+  
+  .skills p {
+    margin-bottom: 5px;
+  }
+  
+  /* Projects Section */
+  .projects h2 {
+    margin: 10px;
+    color: orangered;
+    font-size: 30px;
+  }
+  
+  .pro1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
+  
+  .pro1 p {
+    text-align: center;
+    color: white;
+    font-size: 27px;
+  }
+  
+  /* Contact Section */
+  .contact-info h1 {
+    margin: 30px;
+    color: orangered;
+    font-size: 30px;
+  }
+  
+  .contact-info input {
+    background-color: azure;
+    color: orangered;
+    height: 30px;
+    width: 60%;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Button */
+  button {
+    background-color: orangered;
+    height: 30px;
+    width: 100px;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .typing-text {
+    white-space: nowrap;
+    overflow: hidden;
+    color: orangered;
+    animation: typing 7s steps(20) infinite;
+  }
+  
+  .cursor {
+    animation: blink 1s steps(1) infinite;
+    color: #000;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 5ch;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .fa-bars{
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-size: 20px;
+    color:black;
+  }
+  .circle-container{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .circle{
+    text-align: center;
+    margin: 10px;
+  }
+  .progress-circle{
+    width:100px;
+    height:100px;
+    background: conic-gradient(orangered calc(var(--percentage)*1%),#333 calc(var(--percentage)*1%));
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display:inline-block;
+    
+   
+  }
+  .circle p{
+    color:#fff;
+  }
+  .professional-skills{
+    margin-top: 20px;
+  }
+  
+  
+  /* Media Queries */
+  @media (max-width: 786px) {
+    .fa-bars {
+      display: block;
+      color: white;
+    }
+    header{
+      height:auto;
+    }
+    .logo{
+      display:none;
+  
+    }
+  
+    .navbar {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navbar.active {
+      display: flex;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      width: 100%;
+      background-color: cyan;
+    }
+  
+    .navbar ul li {
+      text-align: center;
+      padding: 8px 0;
+    }
+  
+    .home {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .home-img img {
+      height: 200px;
+      width: 200px;
+    }
+  
+    .about-me {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .img {
+      margin: 0;
+      margin-top: 20px;
+    }
+  
+    .skills {
+      flex-direction: column;
+    }
+  
+    .pro1 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  footer{
+    background-color: orangered;
+    color:black;
+    display: flex;
+    justify-content: center;
+    height:50px;
+    margin: 50px;
+    padding-top: 20px;
+  }
+  
+    </style>
+</head>
+<body>
+   <header>
+    <div class="logo">
+        <a href="" class="logo">portfolio</a>
+    </div>
+    <nav class="navbar" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <i class="fa-duotone fa-solid fa-bars" id="menu-icon"></i>
+   </header>
+   <section class="home" id="home">
+    <div class="home-content">
+        <h3>Hi,Myself</h3>
+        <h1>velpula  mounika</h1>
+        <h3>And I'm a <Span class="typing-text">Front-End Developer</Span><span class="cursor">|</span></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Possimus fugit ipsam dicta hic soluta, labore laborum <br>reprehenderit ipsa, excepturi sunt facilis ut voluptatibus magni<br> totam deleniti ex, nostrum nam. Repellat.</p>
+        <div class="social-icons">
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <a href="" class="anchor">Download CV</a>
+    </div>
+    <div class="home-img">
+        <img src="img.jpg" alt="" height="200px" width="205px">
+    </div>
+   </section>
+     </div>
+<section class="about-me" id="about">
+    <div class="img">
+        <img src="img.jpg" alt="" height="200px" width="190px">
+   </div>
+   <div class="info">
+    <h1>About Me</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Iure vero fugiat quo nulla voluptas possimus libero officia tempora<br> reprehenderit sit? Earum nemo aliquam beatae <br>blanditiis alias neque id, deserunt repellendus!</p>
+        <button>Read More</button>
+   </div>
+</section>
+    <!-- skill -->
+ <div class="container" id="skills">
+    <h1>My Skills</h1>
+    <div class="tech-skills">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <p>HTML</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:90%"></div>
+            </div>
+        </div>
+        <div class="skills">
+            <p>CSS</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:90%"></div>
+            </div>
+        </div>
+        <div class="skills">
+            <p>Js</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:90%"></div>
+            </div>
+        </div>
+        <div class="skills">
+            <p>Node.Js</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:50%"></div>
+            </div>
+        </div>
+        <div class="skills">
+            <p>EXPRESS.Js</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:50%"></div>
+            </div>
+        </div>
+        <div class="skills">
+            <p>python</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:70%"></div>
+            </div>
+        </div>
+        <p>React</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:70%"></div>
+            </div>
+   </div>
+    <div class="professional-skills">
+        <h2>Professional Skills</h2>
+        <center>
+        <div class="circle-container">
+            <div class="circle">
+                <div class="progress-circle" style="--percentage:90;"></div>
+                <p>Creativity</p>
+            </div>
+            <div class="circle">
+                <div class="progress-circle" style="--percentage:70;"></div>
+                <p>Communication</p>
+            </div>
+            <div class="circle">
+                <div class="progress-circle" style="--percentage:60;"></div>
+                <p>Problem Solving</p>
+            </div>
+            <div class="circle">
+                <div class="progress-circle" style="--percentage:90;"></div>
+                <p>Team Work</p>
+            </div>
+        </div>
+       </div>
+  </center>
+ </div>
+ <div class="projects" id="projects">
+    <center><h2>Project</h2></center>
+    <div class="pro1">
+        <div class="pro">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Nick_Vujicic_%2851770686466%29_%28cropped%29.jpg" alt="" height="300px" width="300px">
+         <p>about nick vujicic webpage</p>
+        </div>
+        <div class="pro">
+         <a href=""><img src="https://images4.alphacoders.com/216/thumb-1920-216106.jpg" alt="" height="300px" width="300px"></a>
+         <p>different places churches</p>
+        </div>
+        <div class="pro">
+         <a href=""><img src="https://www.bookeventz.com/blog-old/wp-content/uploads/freshers-party.jpg" alt="" height="300px" width="300px"></a>
+         <p>freshers webpage</p>
+        </div>
+    </div>
+ </div>
+
+   <center>
+    <div class="contact-info" id="contact">
+        <h1>Contact</h1>
+        <input type="text" placeholder="Enter Your Name" id="input"><br><br>
+        <input type="email" placeholder="Enter your Email-id"  id="input1"><br><br>
+        <input type="address" placeholder="give a commment......"  id="input2"><br><br><br>
+        <button onlick="submit()">Submit</button>
+    </div>
+   </center>
+   <footer>
+    <p>copy-right @2024</p>
+   </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        let toggle=document.querySelector('.fa-bars');
+        let menu=document.querySelector('.navbar');
+        toggle.onclick=function(){
+            menu.classList.toggle("active")
+        }
+        function submit(){
+        const name=document.getElementById('input').value
+        console.log("name:"+name.value);
+        const mail=document.getElementById('input1')
+        console.log("mail"+mail.value);
+        const address=document.getElementById('input2')
+        console.log("address"+address.value);
+        alert('submitted')
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
